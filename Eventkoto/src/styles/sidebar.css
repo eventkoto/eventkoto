@@ -1,0 +1,151 @@
+/*************************************************/
+/***********   STYLES USED on Sidebar
+/*************************************************/
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 78px;
+  background: #262626;
+  padding: 6px 14px;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.sidebar.active {
+  width: 240px;
+}
+
+.sidebar .logo-content .logo {
+  color: #fff;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+.sidebar.sidebar.active .logo-content .logo {
+  opacity: 1;
+  transition: 0.1s;
+  font-size: 30px;
+}
+
+.logo-content .logo .logo-name {
+  font-size: 20px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.sidebar.active .logo .logo-name {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.sidebar .btn {
+  position: absolute;
+  color: #fff;
+  left: 55%;
+  top: 20px;
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  line-height: 20px;
+  transform: translateX(-50%);
+}
+
+.sidebar.active .btn {
+  left: 90%;
+}
+
+.sidebar ul {
+  margin-top: 20px;
+}
+
+.sidebar ul li {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  list-style: none;
+  margin: 10px 2px;
+  line-height: 50px;
+  text-align: center;
+  color: #262626;
+  transition: all 0.4s ease;
+}
+
+.sidebar ul li .links:hover {
+  background: #fff;
+  color: #262626;
+  border-radius: 12px;
+}
+
+.sidebar ul li input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  background: #494949;
+  padding-left: 50px;
+  color: #fff;
+}
+
+.sidebar .icon-search {
+  position: absolute;
+  color: #fff;
+  z-index: 99;
+  font-size: 22px;
+  transform: translate(15px, 15px);
+}
+
+.links {
+  opacity: 1;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.sidebar .links-name {
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.active .links-name {
+  opacity: 1;
+  display: flex;
+}
+
+.sidebar ul li .icon {
+  height: 50px;
+  min-width: 20px;
+  border-radius: 12px;
+  line-height: 50px;
+  margin-right: 20px;
+  text-align: center;
+  margin-left: 15px;
+}
+
+.sidebar .profile_content {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  list-style: none;
+  margin: 0 5px;
+  line-height: 50px;
+  text-align: center;
+  bottom: 0;
+}

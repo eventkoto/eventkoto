@@ -1,0 +1,151 @@
+.hrline {
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+    margin-left: 24px;
+    
+}
+
+.calendarlink {
+    text-decoration: none;
+    display: inline-block;
+    padding-right: 24px;
+    padding-top: 12px;
+    font-size: 24px;
+    color: #262626;
+}
+
+.calendarlink::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #b91f26;
+  display:flex;
+  margin:auto;
+  transition: .5s;
+}
+
+.calendarlink:hover::after{
+    width:100%;
+  }
+
+.calendarevents {
+    width: 90vw;
+    min-height: 100vh;
+    height: 150px;
+    margin-left: 24px;
+    display: flex;
+}
+
+.calendarevents .clndrLeft{
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.calendarevents .clndrRight{
+    width: 30%;
+    height: 75vh;
+    position: relative;
+
+}
+
+/* EVENT HOLDER */
+
+.clndrLeft .event_holder{
+    margin-top: 25px;
+    margin-left: 75px;
+    width: 80%;
+    height: 250px;
+    background: #fff;
+    display: flex;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.event_holder:hover {
+    border: 2px solid #b91f26;
+    transform: scale(1.05);
+}
+
+.event_holder .img_holder {
+    height: 150px;
+    width:  150px;
+    background: darkblue;
+    margin-left: 50px;
+    margin-top: 50px;
+    border-radius: 12px;
+}
+
+.info_holder {
+    margin-top: 50px;
+    margin-left: 25px;
+}
+
+.info_holder span {
+    color: #262626;
+    font-size: 30px;
+}
+
+.info_holder p {
+    margin-top: -10px;
+    color: #b91f26;
+}
+
+.details {
+    color: #262626;
+    margin-top: 35px;
+}
+
+/* EVENT BOX */
+
+.event_box {
+    width: 100%;
+    height: 100%;
+    background: rgb(187, 187, 187);
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.event_box .img_box {
+    height: 200px;
+    width:  88%;
+    background: darkblue;
+    margin-left: 25px;
+    margin-top: 25px;
+    border-radius: 12px;
+}
+
+.event_box .infolink {
+    text-decoration: none;
+    display: inline-block;
+    padding-right: 12px;
+    padding-top: 12px;
+    font-size: 16px;
+    color: #262626;
+}
+
+.infolink::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #b91f26;
+    display:flex;
+    margin:auto;
+    transition: .5s;
+ }
+
+.infolink:hover::after{
+    width:100%;
+  }
+
+.event_box .detail_box{
+    width: 88%;
+    height: 100%;
+    margin-left: 25px;
+}

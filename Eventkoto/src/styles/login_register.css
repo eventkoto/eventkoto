@@ -1,0 +1,114 @@
+/*************************************************/
+/***********   STYLES USED on AUTH PAGE
+/*************************************************/
+
+.login-page {
+  display: flex;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 800px) {
+  .login-page {
+    flex-direction: column-reverse;
+    height: 200vh;
+  }
+}
+
+/*************************************************/
+/*********** Styles on the LEFT SIDE of Auth Page
+/*************************************************/
+
+.login-page .left-side {
+  flex: 3;
+  background-color: #b91f26;
+  align-items: center;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.left-side img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.left-side h2 {
+  margin-top: -10rem;
+  color: #262626;
+  font-size: 68px;
+  letter-spacing: -5px;
+  font-family: "Spartan", sans-serif;
+}
+
+.left-side p {
+  color: #fff;
+  font-size: 20.28px;
+}
+
+/*************************************************/
+/*********** Styles on the RIGHT SIDE of Auth Page 
+/*************************************************/
+
+.login-page .right-side {
+  flex: 2;
+  word-break: break-all;
+  margin: 0;
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.right-side h2 {
+  padding-top: 10px;
+  color: #b91f26;
+  font-size: 68px;
+  letter-spacing: -5px;
+  font-family: "Spartan", sans-serif;
+}
+
+.right-side-reg h2 {
+  padding-top: 10px;
+  padding-left: 12px;
+  color: #b91f26;
+  font-size: 40px;
+  letter-spacing: -2px;
+  font-family: "Spartan", sans-serif;
+}
+
+.right-side-reg span {
+  padding-left: 12px;
+  color: #262626;
+  font-size: 16px;
+}
+.right-side p {
+  color: #262626;
+}
+
+.parag {
+  text-align: center;
+  display: inline-block;
+  padding-top: 10px;
+  color: #262626;
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.paraga {
+  text-align: center;
+  display: inline-block;
+  padding-top: 10px;
+  color: #b91f26;
+  font-size: 14px;
+  text-decoration: none;
+}

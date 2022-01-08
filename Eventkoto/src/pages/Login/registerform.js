@@ -86,12 +86,12 @@ const RegisterForm = () => {
         />
         <br />
         <button className="btnPrimary" onClick={signup}>
-          Sign-in
+          Sign-up
         </button>
       </div>
 
-      <p id="parag"> Already Have an Account? </p>
-      <Link to="/" id="paraga">
+      <span id="parag"> Already Have an Account? </span>
+      <Link to="/" className="paraga">
         <b> Sign In</b>
       </Link>
       <br />

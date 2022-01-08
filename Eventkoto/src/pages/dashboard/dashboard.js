@@ -1,6 +1,9 @@
 import Sidebar from "./sidebar";
 import DashboardMain from "./dashboard-main";
 import Dashboard_tiles from "./dashboard-tiles";
+import '../../styles/index.css'
+import Dropdown from "./dropdown";
+import TileFiltered from "./dashboardTileFiltered";
 
 
 const Dashboard = () => {
@@ -10,12 +13,15 @@ const Dashboard = () => {
     return ( 
         <div className="dashboard">
         <Sidebar />
+ 
         <div className="dashboard-main">
-        <DashboardMain />
-        <Dashboard_tiles />
-        <Dashboard_tiles />
-        <Dashboard_tiles />
-        <Dashboard_tiles />
+        <Dropdown />
+        <TileFiltered />
+            {/* <DashboardMain />
+            <Dashboard_tiles />
+            <Dashboard_tiles />
+            <Dashboard_tiles />
+            <Dashboard_tiles /> */}
 
         </div>
         </div>

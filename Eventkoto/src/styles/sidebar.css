@@ -36,10 +36,11 @@
 }
 
 .logo-content .logo .logo-name {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   white-space: nowrap;
   opacity: 0;
+  font-family: 'Spartan', sans-serif;
 }
 
 .sidebar.active .logo .logo-name {

@@ -1,3 +1,4 @@
+import Dropdown from "../dashboard/dropdown";
 import Leftside from "./Leftside";
 import Rightside from "./Rightside";
 
@@ -9,6 +10,7 @@ const LoginPage = () => {
       </div>
       <div className="right-side animate__animated animate__fadeInUp">
         <Rightside />
+        <Dropdown />
       </div>
     </div>
   );

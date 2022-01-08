@@ -2,9 +2,15 @@
 /***********   STYLES for the DASHBOARD 
 /*************************************************/
 
+.dropdown {
+  margin-top: 25px;
+  left:41%;
+  position:absolute;
+}
+
 .dashboard-main {
   position: relative;
-  background: #e4e9f7;
+  background: #f1f1f1;
   min-height: 100vh;
   top: 0;
   left: 78px;
@@ -14,7 +20,7 @@
   overflow-x: hidden;
 }
 
-.title {
+.dashboard .title {
   display: flex;
   position: relative;
   width: 650px;
@@ -23,6 +29,7 @@
   color: #b91f26;
   font-size: 60px;
   letter-spacing: -5;
+  font-family: 'Spartan', sans-serif;
 }
 
 .sidebar.active ~ .dashboard-main {
@@ -31,6 +38,8 @@
   opacity: 0.5;
   overflow-x: hidden;
 }
+
+
 /* IMAGE SLIDER */
 
 .container-slider {
@@ -115,50 +124,108 @@
 /***********   Styles for the Dashboard
 /*************************************************/
 
-.list {
-  width: 100vw;
-  margin-top: 10px;
+
+/* STYLES FOR IMAGE SLIDER */
+
+.mySwiper {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-main .swiper {
+  max-width: 900px;
+  height: 300px;
+  transform: translateX(-90%);
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* STYLES FOR IMAGE TILES */
+
+  .list {
+    max-width: 100%;
+    margin-top: 30px;
+    margin-left: 50px;
+  }
+  
+  .list .mySwiper1{
+    margin-top: 20px;
+  max-width: 90vw;
   height: 200px;
-  overflow-y: hidden;
-  border-radius: 12px;
+  position: relative;
+  transform: translateX(-57%);
+  overflow: hidden;
+  border: none;
+  
+  }
+
+  .list span{
+    font-family: 'Spartan', sans-serif;
+    margin-top: 40px;
+    font-size: 20px;
+    color: #b91f26;
+  }
+  
+  .list .swiper-slide {
+    margin-top: 20px;
+    max-width: 250px;
+    height: 150px;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    border-radius: 12px;
+    
+
+
+  }
+  .textslide {
+    transform: translateY(30%);
+      opacity: 0;
+      transition: all 1s ease;
+      pointer-events: none;
+  }
+  .hoverslide:hover .textslide {
+      opacity: 1;
+      transform: translateY(-5%);
+      transition: all 1s ease;
+
+  }
+
+  .hoverslide:hover {
+    transform: scale(1.05);
+    transition: all 1s ease;
+    background:lightcoral;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+
 }
-.list .listTitle {
-  color: #b91f26;
-  font-size: 20px;
-  font-weight: 500;
-  margin-left: 50px;
-}
-.list .listbox {
-  position: absolute;
-  height: 150px;
-  max-width: 93vw;
-  background: #E4E9F7;
-  overflow-y: hidden;
-  border-radius: 12px;
-}
-.list .listbox .sliderArrow {
-  width: 50px;
-  height: 100%;
-  color: #b91f26;
-  position: absolute;
-  z-index: 99;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  cursor: pointer;
-}
-.list .listbox .sliderArrow.left {
-  left: 0;
-}
-.list .listbox .sliderArrow.right {
-  right: 0;
-}
-.list .listbox .container {
-  margin-left: 50px;
-  display: flex;
-  width: 100%;
-  margin-top: 10px;
-  width: max-content;
-  transform: translateX(0px);
-  transition: all 1s ease;
-}
+
+
+  

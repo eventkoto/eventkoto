@@ -16,12 +16,11 @@ const Dashboard = () => {
  
         <div className="dashboard-main">
         <Dropdown />
-        <TileFiltered />
-            {/* <DashboardMain />
+            <DashboardMain />
             <Dashboard_tiles />
             <Dashboard_tiles />
             <Dashboard_tiles />
-            <Dashboard_tiles /> */}
+            <Dashboard_tiles />
 
         </div>
         </div>

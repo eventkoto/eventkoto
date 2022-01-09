@@ -1,0 +1,63 @@
+.dashboard-main .userprofile {
+    max-width: 90vw;
+    min-height: 80vh;
+    margin-left: 24px;
+}
+
+.userdetails {
+    width: 100%;
+    text-align: center;
+    font-family: 'Spartan', sans-serif;
+    display: block;
+    color: #b91f26;
+}
+
+.userdetails h2 {
+    margin-top: 30px;
+    font-family: 'Spartan', sans-serif;
+    font-size: 40px;
+}
+
+.userdetails p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #262626
+}
+
+
+.detail_display {
+    width: 100%;
+    font-family: 'Spartan', sans-serif;
+    display: flex;
+    margin-top: 20px;
+}
+.detail_display p {
+    font-family: 'Spartan', sans-serif;
+    color: #262626;
+    margin-top: 12px;
+
+}
+.detail_display .row1{
+    min-width: 33%;
+    max-width: 33%;
+    display: block;
+}
+
+.detail_display .row2{
+    min-width: 33%;
+    max-width: 33%;
+}
+
+.detail_display .row3{
+    min-width: 33%;
+    max-width: 33%;
+}
+
+.button_display {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

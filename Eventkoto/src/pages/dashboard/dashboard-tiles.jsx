@@ -71,23 +71,23 @@ import { NavLink } from "react-router-dom";
          </Swiper>
             <div className="detail_title">TITLE HERE</div>
             <div className="hrline">
-            <button className="infolink" onClick={toggledetail1}> Overview </button>
-            <button className="infolink" onClick={toggledetail2}> Details </button>
-            <button className="infolink" onClick={toggledetail3}> Schedule </button>
+            <button className="popuplink" onClick={toggledetail1}> Overview </button>
+            <button className="popuplink" onClick={toggledetail2}> Details </button>
+            <button className="popuplink" onClick={toggledetail3}> Schedule </button>
             </div>
-            <div className="detail_box">
+            <div className="popup_box">
                     {detail_overview && (
-                         <div className="detail_overview"> <p>
+                         <div className="popup_overview"> <p>
                          wat the hell
                          </p></div>
                     )}
                     {detail_details && (
-                         <div className="detail_details"> <p>
+                         <div className="popup_details"> <p>
                          wats the hell
                          </p></div>
                     )}
                     {detail_schedule && (
-                         <div className="detail_schedule"> <p>
+                         <div className="popup_schedule"> <p>
                          watz the hell
                          </p></div>
                     )}

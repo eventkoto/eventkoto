@@ -17,6 +17,32 @@
     border: none;
 }
 
+.hrline .popuplink {
+    text-decoration: none;
+    display: inline-block;
+    padding-right: 12px;
+    padding-top: 12px;
+    font-size: 16px;
+    color: #262626;
+    background: #f1f1f1;
+    border: none;
+}
+
+.popuplink::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #b91f26;
+    display:flex;
+    margin:auto;
+    transition: .5s;
+  }
+  
+  .popuplink:hover::after{
+      width:100%;
+    }
+  
+
 .calendarlink {
     text-decoration: none;
     display: inline-block;

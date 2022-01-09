@@ -9,6 +9,8 @@ import LoginPage from "./pages/Login/Loginpage";
 import CreateAcc from "./pages/Login/CreateAcc";
 
 import AuthPipe from './components/AuthPipe';
+import UserProfile from "./pages/userprofile/userprofile";
+import DashboardAdmin from "./pages/Org Acc/Dashboard/dashboardadmin";
 
 function App() {  
 
@@ -32,8 +34,10 @@ function App() {
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/calendar/upcoming" element={<Upcoming />} />
           <Route path="/calendar/finished" element={<Finished />} />
-    
+          <Route path="/userprofile" element={<UserProfile/>} />
           <Route path="*" element={<Navigate to="/" />} />
+          {/* ADMIN SIDE */}
+          <Route path="/admin" element={<DashboardAdmin />} />
         </>
       }
       

@@ -1,0 +1,123 @@
+
+body.active-modal {
+    overflow-y: hidden;
+}
+
+.btn-modal {
+    padding: 10px 20px;
+    display: block;
+    margin: 100px auto 0;
+    font-size: 18px;
+}
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 100;
+}
+
+.overlay {
+    background: rgba(49,49,49,0.8);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    border-radius: 12px;
+    width: 70vw;
+    height: 700px;
+    z-index: 101;
+}
+
+.modal-content .detail_box {
+    margin-left: 24px;
+    padding: 12px 8px;
+    height: 250px;
+    width: 95%;
+    background: #c5c5c5;
+    border-radius: 12px;
+}
+
+.modal-content .detail_btn {
+    width: 95%;
+    margin-left: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.detail_button {
+    margin-top: 5px;
+    margin-right: 20px;
+  padding: 10px 10px;
+  display: block;
+  outline: none;
+  border: none;
+  border-width: 2px;
+  width: 100px;
+  border-radius: 25px;
+  transition: 0.2s;
+  background: #b91f26;
+  color: #fff;
+  font-size: 12 px;
+  box-shadow: 5px 10px 20px #888888;
+  text-decoration: none;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
+}
+
+.modal-content .popup {
+    width: 70vw;
+    height: 300px;
+    transform: translateX(.5%);
+}
+  
+  .modal-content .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: 300px;
+    max-width: 900px;
+  
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+.detail_title {
+  display: flex;
+  position: relative;
+  width: 650px;
+  margin-left: 24px;
+  margin-top: 10px;
+  color: #b91f26;
+  font-size: 30px;
+  letter-spacing: -5;
+  font-family: 'Spartan', sans-serif;
+
+}

@@ -1,8 +1,11 @@
 import Sidebar from "../dashboard/sidebar";
 import { NavLink } from "react-router-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Upcoming from "./eventlist";
+import Upcoming from "./eventlist-upcoming";
 import Detailbox from "./Detailbox"
+import { useState, useRef } from 'react'
+import Finished from "./eventlist-finished";
+
 
 const Calendar = () => {
     const ColoredLine = ({ color }) => (
@@ -15,21 +18,30 @@ const Calendar = () => {
         />
     );
 
+    const [switchpages, setswitchpages] = useState(true)
+
+    const togglePages = () => {
+        setswitchpages(true)
+    }
+
+    const togglePagetwo = () => {
+        setswitchpages(false)
+    }
+
 
     return ( 
         <div className="calendar">
             <Sidebar />
             <div className="dashboard-main">
-            <div className="title">CALENDAR OF EVENTS</div>
+            <div className="title">EVENT DETAILS</div>
             <div className="hrline"><ColoredLine color="#262626" /></div>
             <div className="hrline">
-                <NavLink to="/calendar/upcoming" className="calendarlink"> Upcoming </NavLink>
-                <NavLink to="/calendar/finished" className="calendarlink"> Finished </NavLink>
+                <button className="calendarlink" onClick={togglePages}> Upcoming </button>
+                <button className="calendarlink" onClick={togglePagetwo}> Finished </button>
             </div>
             <div className="calendarevents">
-                <Upcoming />
-                <Detailbox />
-                
+                {switchpages ? <Upcoming /> :  <Finished />}
+            <Detailbox/>
             </div>
             
         </div>

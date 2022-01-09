@@ -13,6 +13,8 @@
     padding-top: 12px;
     font-size: 16px;
     color: #262626;
+    background: #fff;
+    border: none;
 }
 
 .calendarlink {
@@ -22,6 +24,7 @@
     padding-top: 12px;
     font-size: 24px;
     color: #262626;
+    border: none;
 }
 
 .calendarlink::after{
@@ -40,18 +43,20 @@
 
 .calendarevents {
     width: 90vw;
-    min-height: 100vh;
+    min-height: 80vh;
     height: 150px;
     margin-left: 24px;
     display: flex;
+    overflow: hidden;
 }
 
 .calendarevents .clndrLeft{
-    width: 70%;
+    width: 78%;
     height: 100%;
-    overflow: hidden;
+    overflow-y: scroll;
     align-items: center;
     justify-content: center;
+    margin-right: 20px;
     
 
 }
@@ -115,13 +120,13 @@
 .event_box {
     width: 100%;
     height: 100%;
-    background: rgb(187, 187, 187);
+    background: #fff;
     border-radius: 12px;
-    justify-content: center;
-    align-items: center;
+    padding-top: 10px;
+    border: 2px solid #b91f26;
 }
 
-.event_box .img_box {
+.img_box {
     height: 200px;
     width:  88%;
     background: darkblue;
@@ -154,7 +159,45 @@
   }
 
 .event_box .detail_box{
-    width: 88%;
+    display: flex;
+    width: 300%;
     height: 100%;
     margin-left: 25px;
+    padding-right: 25px;
+    right: 25px;  
+    overflow-x: hidden;
+}
+
+.detail_overview {
+    padding: 8px 12px;
+    margin-top: 12px;
+    position: absolute;
+    display: flex;
+    min-width: 87%;
+    height: 250px;
+    border-radius: 12px;
+    background: #f1f1f1;
+   
+}
+.detail_details {
+    margin-top: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    display: flex;
+    background: #f1f1f1;
+    min-width: 87%;
+    height: 250px;
+    border-radius: 12px;
+   
+}
+.detail_schedule {
+    margin-top: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    display: flex;
+    background: #f1f1f1;
+    min-width: 87%;
+    height: 250px;
+    border-radius: 12px;
+   
 }

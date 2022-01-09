@@ -2,7 +2,7 @@ import { Route, Navigate } from "react-router-dom";
 
 import Dashboard from "./pages/dashboard/dashboard"
 import Calendar from "./pages/calendar/calendar";
-import Upcoming from "./pages/calendar/eventlist";
+import Upcoming from "./pages/calendar/eventlist-upcoming";
 import Finished from "./pages/calendar/Detailbox";
 
 import LoginPage from "./pages/Login/Loginpage";

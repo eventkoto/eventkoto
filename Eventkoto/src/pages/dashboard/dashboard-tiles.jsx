@@ -17,12 +17,39 @@ import { NavLink } from "react-router-dom";
 
 
   export default function List() {
+    const [detail_overview, setdetail_overview] = useState(true)
+    const [detail_details, setdetail_details] = useState(false)
+    const [detail_schedule, setdetail_schedule] = useState(true)
 
+    const toggledetail1 = () => {
+        setdetail_overview(true)
+        setdetail_schedule(false)
+        setdetail_details(false)
+    }
+
+    const toggledetail2 = () => {
+        setdetail_overview(false)
+        setdetail_schedule(false)
+        setdetail_details(true)
+    }
+
+    const toggledetail3 = () => {
+        setdetail_overview(false)
+        setdetail_schedule(true)
+        setdetail_details(false)
+    }
+  
+  
+    const [overview, setoverview] = useState(true)
     const [modal, setModal] = useState(false);
 
     const toggleModal = () => {
     setModal(!modal);
     };
+
+    const toggleOverview =() => {
+      setoverview(!overview)
+    }
 
   if(modal) {
     document.body.classList.add('active-modal')
@@ -38,19 +65,38 @@ import { NavLink } from "react-router-dom";
           <div onClick={toggleModal} className="overlay"></div>
           <div className="modal-content">
           <>
-    <Swiper navigation={true} className="popup">
-    <SwiperSlide>Slide 1</SwiperSlide>
-    <SwiperSlide>Slide 1</SwiperSlide>
-  </Swiper>
-    <div className="detail_title">TITLE HERE</div>
-    <div className="hrline">
-    <NavLink to="/calendar/upcoming" className="infolink"> Overview </NavLink>
-    <NavLink to="/calendar/finished" className="infolink"> Details </NavLink>
-    <NavLink to="/calendar/finished" className="infolink"> Schedule </NavLink></div>
-    <div class="detail_box">hAHAHAHAHA</div>
-    <div className="detail_btn">
-    <button className="detail_button">Interested</button>
-    <button className="detail_button">Attended</button></div>
+         <Swiper navigation={true} className="popup">
+         <SwiperSlide>Slide 1</SwiperSlide>
+         <SwiperSlide>Slide 1</SwiperSlide>
+         </Swiper>
+            <div className="detail_title">TITLE HERE</div>
+            <div className="hrline">
+            <button className="infolink" onClick={toggledetail1}> Overview </button>
+            <button className="infolink" onClick={toggledetail2}> Details </button>
+            <button className="infolink" onClick={toggledetail3}> Schedule </button>
+            </div>
+            <div className="detail_box">
+                    {detail_overview && (
+                         <div className="detail_overview"> <p>
+                         wat the hell
+                         </p></div>
+                    )}
+                    {detail_details && (
+                         <div className="detail_details"> <p>
+                         wats the hell
+                         </p></div>
+                    )}
+                    {detail_schedule && (
+                         <div className="detail_schedule"> <p>
+                         watz the hell
+                         </p></div>
+                    )}
+
+                </div>
+                    
+            <div className="detail_btn">
+            <button className="detail_button">Interested</button>
+            <button className="detail_button">Attended</button></div>
     </>
         </div>
         </div>

@@ -1,19 +1,59 @@
 import { NavLink } from "react-router-dom";
-
+import { useState, useRef } from 'react'
 const Detailbox = () => {
+    const [detail_overview, setdetail_overview] = useState(true)
+    const [detail_details, setdetail_details] = useState(false)
+    const [detail_schedule, setdetail_schedule] = useState(true)
+
+    const toggledetail1 = () => {
+        setdetail_overview(true)
+        setdetail_schedule(false)
+        setdetail_details(false)
+    }
+
+    const toggledetail2 = () => {
+        setdetail_overview(false)
+        setdetail_schedule(false)
+        setdetail_details(true)
+    }
+
+    const toggledetail3 = () => {
+        setdetail_overview(false)
+        setdetail_schedule(true)
+        setdetail_details(false)
+    }
+
     return ( 
         <div className="clndrRight">
             <div className="event_box">
                 <div className="img_box">
-                    
+                  hahahah  
                 </div>
                 <div className="info_links">
                 <div className="hrline">
-                <NavLink to="/calendar/upcoming" className="infolink"> Overview </NavLink>
-                <NavLink to="/calendar/finished" className="infolink"> Details </NavLink>
-                <NavLink to="/calendar/finished" className="infolink"> Schedule </NavLink>
+                <button className="infolink" onClick={toggledetail1}> Overview </button>
+                <button className="infolink" onClick={toggledetail2}> Details </button>
+                <button className="infolink" onClick={toggledetail3}> Schedule </button>
             </div>
-                <div className="detail_box"> hahahaha</div>
+                <div className="detail_box">
+                    {detail_overview && (
+                         <div className="detail_overview"> <p>
+                         wat the hell
+                         </p></div>
+                    )}
+                    {detail_details && (
+                         <div className="detail_details"> <p>
+                         wats the hell
+                         </p></div>
+                    )}
+                    {detail_schedule && (
+                         <div className="detail_schedule"> <p>
+                         watz the hell
+                         </p></div>
+                    )}
+        
+
+                </div>
                     </div>
                     </div>
                 

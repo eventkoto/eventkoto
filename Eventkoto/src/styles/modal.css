@@ -39,12 +39,14 @@ body.active-modal {
 }
 
 .modal-content .detail_box {
+    display: flex;
     margin-left: 24px;
     padding: 12px 8px;
     height: 250px;
     width: 95%;
     background: #c5c5c5;
     border-radius: 12px;
+    overflow: hidden;
 }
 
 .modal-content .detail_btn {

@@ -1,16 +1,15 @@
 import { Route, Navigate } from "react-router-dom";
-
 import Dashboard from "./pages/dashboard/dashboard"
 import Calendar from "./pages/calendar/calendar";
 import Upcoming from "./pages/calendar/eventlist-upcoming";
 import Finished from "./pages/calendar/Detailbox";
-
 import LoginPage from "./pages/Login/Loginpage";
 import CreateAcc from "./pages/Login/CreateAcc";
-
 import AuthPipe from './components/AuthPipe';
 import UserProfile from "./pages/userprofile/userprofile";
-import DashboardAdmin from "./pages/Org Acc/Dashboard/dashboardadmin";
+import Eventlist from "./pages/Org Acc/Event list/eventlist";
+import CreateEvent from "./pages/Org Acc/CreateEvent/createevent";
+import EditEvent from "./pages/Org Acc/Edit Event/editevent";
 
 function App() {  
 
@@ -37,7 +36,10 @@ function App() {
           <Route path="/userprofile" element={<UserProfile/>} />
           <Route path="*" element={<Navigate to="/" />} />
           {/* ADMIN SIDE */}
-          <Route path="/admin" element={<DashboardAdmin />} />
+          <Route path="/admin" element={<Eventlist />} />
+          <Route path="/addevent" element={<CreateEvent />} />
+          <Route path="/editevent" element={<EditEvent />} />
+
         </>
       }
       

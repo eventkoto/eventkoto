@@ -78,17 +78,17 @@ import { NavLink } from "react-router-dom";
             <div className="popup_box">
                     {detail_overview && (
                          <div className="popup_overview"> <p>
-                         wat the hell
+                         Overview Here
                          </p></div>
                     )}
                     {detail_details && (
                          <div className="popup_details"> <p>
-                         wats the hell
+                         Conference Link and Other Details Here
                          </p></div>
                     )}
                     {detail_schedule && (
                          <div className="popup_schedule"> <p>
-                         watz the hell
+                         Schedule Here
                          </p></div>
                     )}
 

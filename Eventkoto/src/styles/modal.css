@@ -105,6 +105,16 @@ body.active-modal {
   text-decoration: none;
 }
 
+.detail_button:hover {
+    background: #961118;
+  }
+  
+.detail_button:active {
+    background: #961118;
+    box-shadow: 5px 5px 10px #888888;
+    transform: translateY(4px);
+}
+  
 .modal-content .popup {
     width: 70vw;
     height: 300px;

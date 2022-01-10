@@ -44,20 +44,23 @@ const Sidebar = () => {
           <ul className="nav-list">
           <BiSearch className="icon-search" style={style} onClick={handleToggle}/>
             <li> <input type="text" placeholder="Search..." />
-            {/* <span className="tooltip">Dashboard</span> */}
             </li>
             <li><NavLink to="/dashboard" className="links"> <BsGrid className="icon"/><span className="links-name"> Dashboard</span></NavLink>
-            {/* <span className="tooltip">Dashboard</span> */}
+
             </li>
             <li><NavLink to="/calendar" className="links"> <BsCalendar className="icon"/><span className="links-name"> Calendar</span></NavLink>
-            {/* <span className="tooltip">Dashboard</span> */}
+
             </li>
             <li><NavLink to="/userprofile" className="links"> <AiOutlineUser className="icon"/><span className="links-name"> Profile</span></NavLink>
-            {/* <span className="tooltip">Dashboard</span> */}
+
+            </li>
+            {/* EXTRA BUTTON FOR NAVIGAATION BETWEEN USER AND ORGANIZATION ACCOUNTS */}
+            <li><NavLink to="/admin" className="links"> <AiOutlineUser className="icon"/><span className="links-name"> To admin</span></NavLink>
+
             </li>
             <li>
             <NavLink to="/" onClick={logOut} className="links"> <BiLogOut className="icon"/><span className="links-name"> Log out</span></NavLink>
-            {/* <span className="tooltip">Dashboard</span> */}
+  
          
             </li>
           </ul>

@@ -46,6 +46,23 @@ html,body{
 
 }
 
+.inputTextShort {
+  margin-top: 5px;
+  padding: 10px 10px;
+  outline: none;
+  border: solid;
+  border-width: 2px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 25px;
+  border-color: rgba(185, 31, 38, 0.5);
+
+}
+
+.inputFile {
+  padding: 10px 10px;
+}
+
 .btnPrimary{
   margin: 20px auto;
   padding: 10px 10px;

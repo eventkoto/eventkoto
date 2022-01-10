@@ -38,17 +38,17 @@ const Detailbox = () => {
                 <div className="detail_box">
                     {detail_overview && (
                          <div className="detail_overview"> <p>
-                         wat the hell
+                         Overview Here
                          </p></div>
                     )}
                     {detail_details && (
                          <div className="detail_details"> <p>
-                         wats the hell
+                         Conference Link and Other Details Here
                          </p></div>
                     )}
                     {detail_schedule && (
                          <div className="detail_schedule"> <p>
-                         watz the hell
+                         Schedule here
                          </p></div>
                     )}
         

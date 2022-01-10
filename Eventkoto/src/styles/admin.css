@@ -1,0 +1,191 @@
+.event-main {
+    position: relative;
+    background: #f1f1f1;
+    min-height: 100vh;
+    top: 0;
+    left: 90px;
+    width: calc(200% - 50px);
+    transition: all 0.5s ease;
+    z-index: 0;
+    overflow-x: hidden;
+  }
+
+  .sidebar.active ~ .event-main {
+    left: 260px;
+    width: calc(200% - 250px);
+    opacity: 0.5;
+    overflow-x: hidden;
+  }
+
+.dashboard-main .userprofile {
+    max-width: 90vw;
+    min-height: 80vh;
+    margin-left: 12px;
+}
+.event-main .titleadmin{
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+    color: #b91f26;
+    font-size: 60px;
+    letter-spacing: -5;
+    font-family: 'Spartan', sans-serif;
+}
+
+.userdetails {
+    width: 100%;
+    text-align: center;
+    font-family: 'Spartan', sans-serif;
+    display: block;
+    color: #b91f26;
+}
+
+.userdetails h2 {
+    margin-top: 30px;
+    font-family: 'Spartan', sans-serif;
+    font-size: 40px;
+}
+
+.userdetails p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #262626
+}
+
+
+.detail_display {
+    width: 100%;
+    font-family: 'Spartan', sans-serif;
+    display: flex;
+    margin-top: 20px;
+}
+.detail_display p {
+    font-family: 'Spartan', sans-serif;
+    color: #262626;
+    margin-top: 12px;
+
+}
+.detail_display .row1{
+    min-width: 33%;
+    max-width: 33%;
+    display: block;
+}
+
+.detail_display .row2{
+    min-width: 33%;
+    max-width: 33%;
+}
+
+.detail_display .row3{
+    min-width: 33%;
+    max-width: 33%;
+}
+
+.button_display {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* STYLES OF ADD EVENT */
+
+.addevent {
+    margin: 20px 12px;
+    width: 91vw;
+    min-height: 70vh;
+    font-family: 'Spartan', sans-serif;
+    display: block;
+    display: flex;
+}
+
+.addevent .adddetails {
+    min-width: 60%;
+    background: #f1f1f1;
+    display: flex;
+}
+
+.addevent .preview {
+    min-width: 60%;
+}
+
+.adddetails .column1 {
+    min-width: 50%;
+}
+.adddetails .column2 {
+    min-width: 50%;
+}
+
+.adddetails p, .preview p {
+    margin-top: 24px;
+    font-family: 'Spartan', sans-serif;
+    font-size: 16px;
+    color: #262626
+}
+
+.selectdetails {
+    margin-top: 5px;
+  padding: 10px 10px;
+  outline: none;
+  border: solid;
+  border-width: 2px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 25px;
+  border-color: rgba(185, 31, 38, 0.5);
+}
+
+
+.optiondetails {
+    margin-top: 5px;
+    padding: 10px 10px;
+    outline: none;
+    border: solid;
+    border-width: 2px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 25px;
+    border-color: rgba(185, 31, 38, 0.5);
+}
+
+textarea {
+    resize: none;
+    height: 200px;
+}
+
+/* PREVIEW SIDE */
+
+.previewbanner {
+        margin: 10px 12px;
+        max-width: 400px;
+        height: 150px;
+        background: #f1f1f1;    
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+        left: 0;
+        top: 0;
+}
+
+.previewthumb {
+    margin: 10px 12px;
+    max-width: 125px;
+    height: 75px;
+    background: #f1f1f1;    
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    left: 0;
+    top: 0;
+}
+
+.buttonevent {
+    width: 90vw;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

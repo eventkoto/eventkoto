@@ -3,7 +3,6 @@ import '../../styles/index.css'
 import Sidebar from '../dashboard/sidebar';
 import '../../styles/userprofile.css'
 import { useState } from 'react';
-import EditButtons from './buttons';
 
 
 const UserProfile = () => {
@@ -36,54 +35,55 @@ const UserProfile = () => {
             <p>E-mail here</p>
             <p>Program Here</p>
             <p>Organization Here</p>
-            </div>
+        </div>
         <div className="detail_display">
             <div className="row1">
             <p>Name</p>
             <input
-          className="inputText"
-          placeholder="Name"
-          type="text"
-          required
+              className="inputText"
+              placeholder="Name"
+              type="text"
+              required
             />
 
             <p>E-mail</p>
             <input
-          className="inputText"
-          placeholder="E-mail"
-          type="text"
-          required
+            className="inputText"
+            placeholder="E-mail"
+            type="text"
+            required
             />
             </div>
             
             <div className="row2">
             <p>Program</p>
             <input
-          className="inputText"
-          placeholder="Program"
-          type="text"
-          required
+            className="inputText"
+            placeholder="Program"
+            type="text"
+            required
             />
         
             <p>Organization</p>
             <input
-          className="inputText"
-          placeholder="Organization"
-          type="text"
-          required
-            />
-            </div>
-            <div className="row3">
-            <p>Student ID</p>
-            <input
-          className="inputText"
-          placeholder="Student ID"
-          type="text"
-          required
+            className="inputText"
+            placeholder="Organization"
+            type="text"
+            required
             />
             </div>
 
+            <div className="row3">
+            <p>Student ID</p>
+            <input
+            className="inputText"
+            placeholder="Student ID"
+            type="text"
+            required
+            />
+            </div>
         </div>
+        
         <div className="button_display">
         { Edit ? 
         <button className="detail_button" onClick={toggleEdit}>Edit Details</button> :         

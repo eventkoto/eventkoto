@@ -1,7 +1,5 @@
 import {
-  BiSearch,
   BiMenu,
-  BiCalendar,
   BiLogOut,
   BiAddToQueue,
   BiEdit,
@@ -10,15 +8,7 @@ import {
 import {
   TiLocationArrow
 } from "react-icons/ti"
-import {
-  BsGrid,
-  BsCalendar,
-  BsUser
-} from "react-icons/bs"
-import {
-  AiOutlineUser
-} from "react-icons/ai"
-import {NavLink, Link} from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { useState } from "react";
 import { FireAuth } from "../../../libs/firebase/auth";
 
@@ -35,7 +25,6 @@ const SidebarAdmin = () => {
     }
 
     
-    
     return ( 
       <div className={isActive ? "sidebar": "sidebar active"}>
         <div className="logo-content">
@@ -45,26 +34,25 @@ const SidebarAdmin = () => {
           </div>
           <BiMenu className="btn" onClick={handleToggle}/>
           <ul className="nav-list">
-            <li><NavLink to="/dashboard" className="links"> <BiAddToQueue className="icon"/><span className="links-name"> Add Event</span></NavLink>
-            {/* <span className="tooltip">Dashboard</span> */}
+            <li><NavLink to="/addevent" className="links"> <BiAddToQueue className="icon"/><span className="links-name"> Add Event</span></NavLink>
             </li>
-            <li><NavLink to="/calendar" className="links"> <BiEdit className="icon"/><span className="links-name"> Edit Event</span></NavLink>
-            {/* <span className="tooltip">Dashboard</span> */}
+            <li><NavLink to="/editevent" className="links"> <BiEdit className="icon"/><span className="links-name"> Edit Event</span></NavLink>
             </li>
-            <li><NavLink to="/userprofile" className="links"> <BiListUl className="icon"/><span className="links-name"> Event List</span></NavLink>
-            {/* <span className="tooltip">Dashboard</span> */}
+            <li><NavLink to="/admin" className="links"> <BiListUl className="icon"/><span className="links-name"> Event List</span></NavLink>
             </li>
             <li>
+
+              {/* EXTRA BUTTON FOR NAVIGATION BETWEEN USER AND ORGANIZATION ACCOUNT */}
+
+            <li><NavLink to="/dashboard" className="links"> <BiAddToQueue className="icon"/><span className="links-name"> Go back</span></NavLink>
+            </li>
+               {/*  */}
+               
             <NavLink to="/" onClick={logOut} className="links"> <BiLogOut className="icon"/><span className="links-name"> Log out</span></NavLink>
-            {/* <span className="tooltip">Dashboard</span> */}
-         
             </li>
           </ul>
-          <div className="profile_content">
-       
           </div>
         </div>
-      </div>
      );
 
  

@@ -1,6 +1,7 @@
 import SidebarAdmin from "../Sidebar/sidebaradmin";
 import '../../../styles/admin.css'
 import { useState } from "react";
+import SelectEvent from "./SelectEvent";
 
 
 const EditEvent = () => {
@@ -25,8 +26,9 @@ const EditEvent = () => {
             <SidebarAdmin /> 
 
         <div className="event-main">
-            <div className="titleadmin">ADD EVENT</div>
+            <div className="titleadmin">EDIT EVENT</div>
             <div className="hrline"><ColoredLine color="#262626" /></div>
+            <div className="selectevent"><p>Select Event: </p><SelectEvent /></div>
             <div className="addevent"> 
             <div className="adddetails">
             <div className="column1">

@@ -97,8 +97,19 @@
     width: 91vw;
     min-height: 70vh;
     font-family: 'Spartan', sans-serif;
-    display: block;
     display: flex;
+}
+
+.selectevent {
+    max-width: 91vw;
+    display: flex;
+
+}
+
+.selectevent p {
+    padding-top: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 .addevent .adddetails {

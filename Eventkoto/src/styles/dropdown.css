@@ -9,6 +9,16 @@
     position: absolute;
 }
 
+.select_edit {
+    padding: 8px 12px;
+    color: #262626;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 500px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(185, 31, 38, 0.5);
+    position: absolute;
+}
 .select:focus{
     background: #d83840;
     transition: all 1s ease;

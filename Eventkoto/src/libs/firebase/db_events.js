@@ -29,12 +29,50 @@ function docAddress(id){
   return doc(db, db_address, id)
 }
 
+function clearEmpties(o) {
+  for (let k in o) {
+    console.log(k, !(o[k].length > 0))
+    // Special Case on
+    if (k === "published"){
+      continue
+    }
+    else if (k === "schedules"){
+      let final = []
+      for(let i in o[k]){
+        console.log(o[k][i])
+        if (o[k][i] && Boolean(o[k][i].getDate())) {
+          console.log(i)
+          final.push(o[k][i])
+        }
+      }
+      
+      if ((final.length === 0)){
+        delete o[k];
+      }
+      else{
+        o[k] = final
+      }
+    }
+    // The property is an object
+    else if (!((o[k].length > 0) || (Object.keys(o[k]).length > 0) || (Boolean(o[k].getDate)))) {
+      console.log(k)
+      delete o[k]; // The object had no properties, so delete that property
+    }
+  }
+  return o;
+}
+
 export const FireDBRawEvents = {
   data : {
-    eventTemplate : (creator, title, organization, overview, event_date, schedules, details, categories, splash_image, event_images) => {
-      return {
-        creator, title, organization, overview, event_date, schedules, details, categories, splash_image, event_images
+    eventTemplate : (creator, title, organization, overview, schedules, details, categories, splash_image, event_images, published) => {
+      let dat= {
+        creator, title, organization, overview, schedules, details, categories, published
       }
+     
+      if (splash_image.name !== undefined) dat.splash_image = splash_image
+      if (event_images.length > 0) dat.event_images = event_images  
+
+      return dat
     },
   },
   create: async (data) => {
@@ -53,23 +91,52 @@ export const FireDBRawEvents = {
       }
 
       if (data.creator){ 
+        data.creator_id = String(data.creator)
         data.creator = doc(db, account_db_address, data.creator)
       }
+
+      data = clearEmpties(data);
 
       // Then create the collection
       await addDoc(collection(db, db_address),{
         ...data,
         created_at: Date.now(),
       });
+      return true;
     } catch (e) {
       console.error("Error adding document: ", e);
+      return false
     }
   },
   update: async (id, data) => {
     try {
-      return await updateDoc(docAddress(id), data);
+
+      if (data.creator){ 
+        data.creator_id = String(data.creator)
+        data.creator = doc(db, account_db_address, data.creator)
+      }
+
+      // upload the images first
+      if(data.splash_image){
+        let splash_image = data.splash_image
+        let sp = await FireFiles.uploadFile(splash_image.name, splash_image)
+        data.splash_image = sp.link
+      }
+
+      if(data.event_images){
+        let event_images = data.event_images
+        let ei = await FireFiles.uploadFiles(event_images)
+        data.event_images = ei.map(e => e.link)
+      }
+
+      data = clearEmpties(data)
+
+      await updateDoc(docAddress(id), data);
+      
+      return true;
     } catch (e) {
       console.error("Error reading document: ", e);
+      return false;
     }
   },
   delete: async (id) => {
@@ -119,7 +186,7 @@ export const FireDBRawEvents = {
 };
 
 export const FireDBQueryEvents = {
-  getOne : async (id, get_creator=true, load_ratings=true ,load_interested=true, load_attendance=true) => {
+  getOne : async (id, get_creator=false, load_ratings=false ,load_interested=false, load_attendance=false) => {
     // Qyery the main Data
     let d = await FireDBRawEvents.readOne(id)
     let data = {...d.data(), uid: d.id}
@@ -174,9 +241,13 @@ export const FireDBQueryEvents = {
     return data
   },
   getLatestAll : async (amount=100) => {
-    return await FireDBRawEvents.readAll(amount)
+    return await FireDBRawEvents.readQuery(where("published", "==", true), limit(amount))
   },
   getLatestCategory : async (category, amount=100) => {
-    return await FireDBRawEvents.readQuery(where("categories", "array-contains", category), limit(amount))
+    return await FireDBRawEvents.readQuery(where("categories", "array-contains", category), where("published", "==", true), limit(amount))
+  },
+  getLatestByAuthor : async (uid, amount=100) => {
+    console.log(`/Accounts/${uid}`)
+    return await FireDBRawEvents.readQuery(where("creator_id", "==", `${uid}`), limit(amount))
   }
 }

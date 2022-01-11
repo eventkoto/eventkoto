@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { parseDate } from "../../libs/parseDate";
+import { parseDate } from "../../../libs/parseDate";
 
 
 const Upcoming = ({events, setData}) => {
@@ -13,9 +12,10 @@ const Upcoming = ({events, setData}) => {
                             <img src={e.splash_image} alt="splash" className="w-full h-full object-cover" />
                         </div>
                         <div className="w-3/4 p-5">
+                            <p className="font-bold">{e.published ? "Published" : "Draft"}</p>
                             <h2 className="text-3xl">{e.title}</h2>
                             <p className="text-red-600">by {e.organization}</p>
-                            <div className="details">{e.event_date ? parseDate(Number(`${e.event_date.seconds}000`)) : "No Provided Schedule"}</div>
+                            <div className="details">{e.schedules ? parseDate(Number(`${e.schedules[0].seconds}000`)) : "No Provided Schedule"}</div>
                         </div>
                     </div>
                 )

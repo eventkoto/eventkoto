@@ -88,8 +88,6 @@ export const FireEventInteraction = {
       } 
       else{
         res.forEach(async (e) => {
-            console.log(e.id)
-            console.log(data)
             await FireDBRatings.update(e.id, {ratings : data.ratings})
         })
         return 2

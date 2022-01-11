@@ -36,8 +36,6 @@ const SidebarAdmin = () => {
           <ul className="nav-list">
             <li><NavLink to="/addevent" className="links"> <BiAddToQueue className="icon"/><span className="links-name"> Add Event</span></NavLink>
             </li>
-            <li><NavLink to="/editevent" className="links"> <BiEdit className="icon"/><span className="links-name"> Edit Event</span></NavLink>
-            </li>
             <li><NavLink to="/admin" className="links"> <BiListUl className="icon"/><span className="links-name"> Event List</span></NavLink>
             </li>
             <li>

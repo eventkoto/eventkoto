@@ -24,6 +24,17 @@ const RegisterForm = () => {
     FireAuth.registerUser(email, pass, data);
   }
 
+  function signupAuthor() {
+    let data = FireAuth.data.accountData.orgs(
+      name,
+      email,
+      program,
+      org,
+      sid,
+    )
+    FireAuth.registerUser(email, pass, data);
+  }
+
   function _handleKeyDown(e) {
     if (e.key === 'Enter') {
       signup()
@@ -87,6 +98,9 @@ const RegisterForm = () => {
         <br />
         <button className="btnPrimary" onClick={signup}>
           Sign-up
+        </button>
+        <button className="btnPrimary" onClick={signupAuthor}>
+          Sign-up As An Organization
         </button>
       </div>
 

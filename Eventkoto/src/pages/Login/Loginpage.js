@@ -8,8 +8,10 @@ const LoginPage = () => {
       <div className="left-side">
         <Leftside />
       </div>
-      <div className="right-side animate__animated animate__fadeInUp">
-        <Rightside />
+      <div className="overflow-y-hidden right-side">
+        <div className=" animate__animated animate__fadeInUp">
+          <Rightside />
+        </div>
       </div>
     </div>
   );

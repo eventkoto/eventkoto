@@ -3,29 +3,24 @@
     background: #f1f1f1;
     min-height: 100vh;
     top: 0;
-    left: 90px;
-    width: calc(200% - 50px);
+    padding-left: 90px;
+    width: 100%;
     transition: all 0.5s ease;
     z-index: 0;
-    overflow-x: hidden;
   }
 
   .sidebar.active ~ .event-main {
-    left: 260px;
-    width: calc(200% - 250px);
+    padding-left: 260px;
+    width: "100%";
     opacity: 0.5;
-    overflow-x: hidden;
   }
 
 .dashboard-main .userprofile {
-    max-width: 90vw;
-    min-height: 80vh;
-    margin-left: 12px;
 }
+
 .event-main .titleadmin{
     display: flex;
     position: relative;
-    margin-top: 10px;
     color: #b91f26;
     font-size: 60px;
     letter-spacing: -5;

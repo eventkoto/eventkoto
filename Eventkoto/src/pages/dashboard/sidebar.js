@@ -42,9 +42,11 @@ const Sidebar = () => {
           </div>
           <BiMenu className="btn" onClick={handleToggle}/>
           <ul className="nav-list">
-          <BiSearch className="icon-search" style={style} onClick={handleToggle}/>
+            {/*
+            <BiSearch className="icon-search" style={style} onClick={handleToggle}/>
             <li> <input type="text" placeholder="Search..." />
             </li>
+            */}
             <li><NavLink to="/dashboard" className="links"> <BsGrid className="icon"/><span className="links-name"> Dashboard</span></NavLink>
 
             </li>

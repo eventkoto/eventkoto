@@ -10,6 +10,7 @@ import UserProfile from "./pages/userprofile/userprofile";
 import Eventlist from "./pages/Org Acc/Event list/eventlist";
 import CreateEvent from "./pages/Org Acc/CreateEvent/createevent";
 import EditEvent from "./pages/Org Acc/Edit Event/editevent";
+import { ViewEvent } from "./pages/Event";
 
 function App() {  
 
@@ -24,6 +25,7 @@ function App() {
         <>
           <Route exact path="/login" element={<LoginPage />} />
           <Route path="/create" element={<CreateAcc />} />
+          <Route path="*" element={<Navigate to="/login"/>} />
         </>
       }
 
@@ -35,10 +37,12 @@ function App() {
           <Route path="/calendar/finished" element={<Finished />} />
           <Route path="/userprofile" element={<UserProfile/>} />
           <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/view/:id" element={<ViewEvent />} />
           {/* ADMIN SIDE */}
           <Route path="/admin" element={<Eventlist />} />
           <Route path="/addevent" element={<CreateEvent />} />
-          <Route path="/editevent" element={<EditEvent />} />
+          <Route path="/editevent/:id" element={<EditEvent />} />
+          <Route path="*" element={<Navigate to="/"/>} />
 
         </>
       }

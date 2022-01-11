@@ -7,9 +7,12 @@ const CreateAcc = () => {
       <div className="left-side">
         <Leftside />
       </div>
-      <div className="right-side animate__animated animate__fadeInUp">
-        <RegisterForm />
+      <div className="overflow-y-hidden right-side">
+        <div className="animate__animated animate__fadeInUp">
+          <RegisterForm />
+        </div>
       </div>
+      
     </div>
   );
 };

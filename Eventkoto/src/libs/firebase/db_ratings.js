@@ -38,7 +38,8 @@ export const FireDBRatings = {
       data.event_snap = {
         title : data.event_snap.title,
         organization : data.event_snap.organization,
-        event_date : data.event_snap.event_date,
+        event_date : data.event_snap.schedules[0] || data.event_snap.event_date,
+        splash_image : data.event_snap.splash_image,
       }
       data.user_snap = {
         name : data.user_snap.name,

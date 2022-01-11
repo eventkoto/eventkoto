@@ -5,7 +5,7 @@ import { FireAuth } from '../libs/firebase/auth';
 
 function AuthPipe({whileCheckingIfLoggedIn , beforeLoggedIn, afterLoggedIn}) {
   
-  let [auth, setAuth] = useState(false)
+  let [auth, setAuth] = useState(true)
   let [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
@@ -22,9 +22,6 @@ function AuthPipe({whileCheckingIfLoggedIn , beforeLoggedIn, afterLoggedIn}) {
   return (
     <Routes>
       {
-        console.log(auth)
-      }
-      {
         loaded ? 
           auth ? 
             afterLoggedIn
@@ -33,8 +30,6 @@ function AuthPipe({whileCheckingIfLoggedIn , beforeLoggedIn, afterLoggedIn}) {
           :
           whileCheckingIfLoggedIn
       }
-
-      <Route path="*" element={<Navigate to={loaded ? auth ? "/" : "/login" : "/loading"} />} />
       
     </Routes>
   )

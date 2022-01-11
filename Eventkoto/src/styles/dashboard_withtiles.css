@@ -4,8 +4,8 @@
 
 .dropdown {
   margin-top: 25px;
-  left:41%;
-  position:absolute;
+  left: 41%;
+  position: absolute;
 }
 
 .dashboard-main {
@@ -13,32 +13,35 @@
   background: #f1f1f1;
   min-height: 100vh;
   top: 0;
-  left: 78px;
-  width: calc(200% - 78px);
+  padding-left: 78px;
+  width: 100%;
   transition: all 0.5s ease;
   z-index: 0;
   overflow-x: hidden;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
 }
 
 .dashboard .title {
   display: flex;
-  position: relative;
+  position: absolute;
+  z-index: 20;
   width: 650px;
   margin-left: 24px;
   margin-top: 10px;
   color: #b91f26;
   font-size: 60px;
   letter-spacing: -5;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
 }
 
 .sidebar.active ~ .dashboard-main {
-  left: 240px;
-  width: calc(200% - 250px);
+  width: 100%;
   opacity: 0.5;
   overflow-x: hidden;
 }
-
 
 /* IMAGE SLIDER */
 
@@ -49,7 +52,6 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
 }
 @media screen and (max-width: 700px) {
   .container-slider {
@@ -124,7 +126,6 @@
 /***********   Styles for the Dashboard
 /*************************************************/
 
-
 /* STYLES FOR IMAGE SLIDER */
 
 .mySwiper {
@@ -132,100 +133,83 @@
 }
 
 .dashboard-main .swiper {
-  max-width: 900px;
-  height: 300px;
-  transform: translateX(-90%);
+  height: 65vh;
+  width: 100%;
   position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  }
-  
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-  
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
-  
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  /* STYLES FOR IMAGE TILES */
-
-  .list {
-    max-width: 100%;
-    margin-top: 30px;
-    margin-left: 50px;
-  }
-  
-  .list .mySwiper1{
-    margin-top: 20px;
-  max-width: 90vw;
-  height: 200px;
-  position: relative;
-  transform: translateX(-57%);
-  overflow: hidden;
-  border: none;
-  
-  }
-
-  .list span{
-    font-family: 'Spartan', sans-serif;
-    margin-top: 40px;
-    font-size: 20px;
-    color: #b91f26;
-  }
-  
-  .list .swiper-slide {
-    margin-top: 20px;
-    max-width: 250px;
-    height: 150px;
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    border-radius: 12px;
-    
-
-
-  }
-  .textslide {
-    transform: translateY(30%);
-      opacity: 0;
-      transition: all 1s ease;
-      pointer-events: none;
-  }
-  .hoverslide:hover .textslide {
-      opacity: 1;
-      transform: translateY(-5%);
-      transition: all 1s ease;
-
-  }
-
-  .hoverslide:hover {
-    transform: scale(1.05);
-    transition: all 1s ease;
-    background:lightcoral;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-
-
+  margin: 0;
 }
 
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
 
-  
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* STYLES FOR IMAGE TILES */
+
+.list {
+  padding: 1rem 1rem;
+}
+
+.list .mySwiper1 {
+  height: fit-content;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.list span {
+  font-family: "Spartan", sans-serif;
+  margin-top: 40px;
+  font-size: 20px;
+  color: #b91f26;
+}
+
+.list .swiper-slide {
+  margin-top: 20px;
+  max-width: 250px;
+  height: 150px;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  border-radius: 12px;
+}
+.textslide {
+  transform: translateY(30%);
+  opacity: 0;
+  transition: all 1s ease;
+  pointer-events: none;
+}
+.hoverslide:hover .textslide {
+  opacity: 1;
+  transform: translateY(-5%);
+  transition: all 1s ease;
+}
+
+.hoverslide:hover {
+  transform: scale(1.05);
+  transition: all 1s ease;
+  background: lightcoral;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}

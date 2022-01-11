@@ -30,6 +30,16 @@ export const FireAuth = {
           type: 0,
         };
       },
+      orgs: (name, email, program, organization, student_id) => {
+        return {
+          name,
+          email,
+          program,
+          organization,
+          student_id,
+          type: 1,
+        };
+      },
     },
   },
   getUser: async (load_ratings=false ,load_interested=false, load_attendance=false) => {

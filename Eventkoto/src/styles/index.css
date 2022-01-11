@@ -1,6 +1,9 @@
 /*************************************************/
 /*********** INDEX CSS - ONLY PUT GLOBAL STYLES HERE
 /*************************************************/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Spartan:wght@700&display=swap');
 
@@ -29,7 +32,6 @@ html,body{
   color: #222222;
   
   background-color: white;
-  overflow-x: hidden;
   text-rendering: optimizeLegibility;
 }
 
@@ -99,9 +101,21 @@ html,body{
   position: relative;
   width: 650px;
   margin-left: 24px;
-  margin-top: 10px;
+  padding-top: 10px;
   color: #b91f26;
   font-size: 60px;
   letter-spacing: -5;
   font-family: 'Spartan', sans-serif;
+}
+
+.overflow-y-hidden{
+  overflow-y: hidden;
+}
+
+input{
+  padding: 0.5rem;
+}
+
+textarea{
+  padding: 0.5rem;
 }

@@ -44,6 +44,7 @@
   
 
 .calendarlink {
+    cursor: pointer;
     text-decoration: none;
     display: inline-block;
     padding-right: 24px;
@@ -97,19 +98,28 @@
 /* EVENT HOLDER */
 
 .clndrLeft .event_holder{
-    margin-top: 25px;
-    margin-left: 75px;
-    width: 80%;
+    cursor: pointer;
+    width: 100%;
     height: 250px;
     background: #fff;
     display: flex;
     border-radius: 12px;
+    border: 2px solid transparent;
     transition: all 0.2s ease;
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
 }
 
 .event_holder:hover {
     border: 2px solid #b91f26;
-    transform: scale(1.05);
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -o-transform: scale(0.95);
 }
 
 .event_holder .img_holder {
@@ -126,9 +136,10 @@
     margin-left: 25px;
 }
 
-.info_holder span {
+.info_holder h2 {
     color: #262626;
     font-size: 30px;
+    padding-bottom: 1rem;
 }
 
 .info_holder p {
@@ -168,6 +179,11 @@
     padding-top: 12px;
     font-size: 16px;
     color: #262626;
+}
+
+.infolink{
+    
+    cursor: pointer;
 }
 
 .infolink::after{

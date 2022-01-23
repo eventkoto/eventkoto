@@ -14,8 +14,8 @@ export function CompSidebar(){
                 //console.log(e.emailVerified)
             }
             let d = await FireAuth.getUser()
-            console.log(d)
-            console.log(d.type == 1)
+            //console.log(d)
+            //console.log(d.type == 1)
             setAdmin(d.type == 1)
         })
     }, [])

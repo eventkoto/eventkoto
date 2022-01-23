@@ -5,9 +5,19 @@ import { FireAuth } from "../../libs/firebase/auth";
 const Rightside = () => {
   const [email, setEmail] = useState("")
   const [pass, setPass] = useState("")
+  const [logging, setLogging] = useState(false)
+  const [error, setError] = useState(false)
 
   function login(){
-    FireAuth.loginUser(email, pass)
+    setLogging(true)
+    setError(false)
+    FireAuth.loginUser(email, pass, (res) => {
+      //console.log(res.code)
+      //console.log(res.message)
+      
+      setLogging(false)
+      setError(res.message)
+    })
   }
 
   function _handleKeyDown(e) {
@@ -43,8 +53,16 @@ const Rightside = () => {
           onKeyDown={_handleKeyDown}
           required
         />
-        <br />
-        <button className="btnPrimary" onClick={login}>Sign-in</button>
+        {
+          error && <p className="text-red-600 p-1">Wrong Email or Password</p>
+        }
+        {
+          logging
+          ?
+          <div className="w-3 h-3 bg-red-600 animate-pulse mx-auto m-5"></div>
+          :
+          <button className="btnPrimary" onClick={login}>Sign-in</button>
+        }
       </div>
       
       <div className="">
@@ -55,9 +73,9 @@ const Rightside = () => {
       </div>
       <div className="">
         <p className="parag"> Forget password?</p>
-        <a href="/" className="paraga">
+        <Link to="/forgot" className="paraga">
           <b> Click here</b>
-        </a>
+        </Link>
       </div>
     </>
   );

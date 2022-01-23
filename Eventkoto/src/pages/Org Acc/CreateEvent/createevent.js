@@ -22,6 +22,8 @@ const CreateEvent = () => {
   let navigate = useNavigate()
   const [loading, setLoading] = useState(false)
 
+  const [error, setError] = useState(false)
+
   // Related To Form Management
   let formTemplate = {
     title: "",
@@ -44,6 +46,8 @@ const CreateEvent = () => {
 
   // Related to Page Publishing
   async function publishPage(publish = false){
+    
+    setError(false)
     let cats = Object.keys(categories).filter(e => form[`cat_${e}`])
     //console.log(cats)
     let dat = FireDBRawEvents.data.eventTemplate(
@@ -54,15 +58,16 @@ const CreateEvent = () => {
     setTimeout(async () => {
       try{
         if ((await FireDBRawEvents.create(dat))){
-          console.log(dat)
+          //console.log(dat)
           navigate("/admin")
         }
         else{
-          console.log("Error")
+          //console.log("Error")
           setLoading(false)
+          setError("Title and Start Date of Event is Required")
         }
       }catch(e){
-        console.log(e)
+        //console.log(e)
       }
     }, 10)
     
@@ -130,6 +135,10 @@ const CreateEvent = () => {
                   <FormTime title="Event Start" value={form.schedules_start} setValue={setValue("schedules_start")}/>
                   <FormTime title="Event End" value={form.schedules_end} setValue={setValue("schedules_end")}/>
                 </div>
+
+                {
+                  error && <p className="text-red-600">{error}</p>
+                }
 
                 <div className="w-full flex justify-end">
                     <button className="p-3 bg-red-200 text-black m-1" onClick={publishPage.bind(this, false)}>Save</button>

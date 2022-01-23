@@ -20,9 +20,9 @@ const AdminDetailbox = ({ id, requestListUpdate = () => {} }) => {
 
   async function deletePost(){
     
-    console.log("Deleting")
+    //console.log("Deleting")
     await FireDBRawEvents.delete(eData.uid)
-    console.log("Deleted")
+    //console.log("Deleted")
     setPA(false); 
     requestListUpdate()
   }

@@ -56,17 +56,17 @@ const CreateEvent = () => {
     let dat = FireDBRawEvents.data.eventTemplate(
       prof.uid, form.title, prof.organization, form.overview, [new Date(form.schedules_start), new Date(form.schedules_end)], form.detail, cats, form.splash_image, form.event_images, publish
     )
-    console.log(form)
-    console.log(dat)
+    //console.log(form)
+    //console.log(dat)
 
     setLoading(true)
     setTimeout(async () => {
       try{
         await FireDBRawEvents.update(params.id, dat)
-        console.log(dat)
+        //console.log(dat)
         navigate("/admin")
       }catch(e){
-        console.log(e)
+        //console.log(e)
       }
     }, 10)
     
@@ -79,7 +79,7 @@ const CreateEvent = () => {
     
     let data = await FireAuth.getUser();
     let doc = await FireDBQueryEvents.getOne(params.id)
-    console.log(doc);
+    //console.log(doc);
     let nForm = {
       title: doc.title || "",
       overview: doc.overview || "",
@@ -100,7 +100,7 @@ const CreateEvent = () => {
       fT[`cat_${k}`] = doc.categories ? doc.categories.indexOf(k) > -1 : false
     }
     
-    console.log({...fT, ...nForm})
+    //console.log({...fT, ...nForm})
     let s = {
       "creator_id": "iEzWQ9nMt0UiFbRjJmiOokCLN4O2",
       "title": "A Talk About Robots",

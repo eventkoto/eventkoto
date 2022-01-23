@@ -6,7 +6,7 @@ export function FormFilePickMultiple({title, holderImg, setValue=e=>console.log(
     const [prevImg2, setPrevImg2] = useState(false)
 
     function handleData2(e) {
-        console.log(e.target.files);
+        //console.log(e.target.files);
         if (e.target.files) {
             setValue(e.target.files);
           let disp = [];

@@ -11,6 +11,7 @@ import Eventlist from "./pages/Org Acc/Event list/eventlist";
 import CreateEvent from "./pages/Org Acc/CreateEvent/createevent";
 import EditEvent from "./pages/Org Acc/Edit Event/editevent";
 import { ViewEvent } from "./pages/Event";
+import ForgotPass from "./pages/Login/ForgotPass";
 
 function App() {  
 
@@ -25,6 +26,7 @@ function App() {
         <>
           <Route exact path="/login" element={<LoginPage />} />
           <Route path="/create" element={<CreateAcc />} />
+          <Route path="/forgot" element={<ForgotPass />} />
           <Route path="*" element={<Navigate to="/login"/>} />
         </>
       }

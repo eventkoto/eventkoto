@@ -30,6 +30,7 @@ export function ViewEvent() {
     let acct = await FireAuth.getUser()
     let doc = await FireDBQueryEvents.getOne(params.id, false, true, true, true)
     //console.log(doc)
+    //console.log(doc)
     setData(doc)
     setAcct(acct)
 
@@ -51,13 +52,13 @@ export function ViewEvent() {
     switch(act){
       case "int":
         setLoading(true)
-        console.log(acct, data)
+        //console.log(acct, data)
         await FireEventInteraction.toggleInterested(FireEventInteraction.data.interested(acct.uid, acct, acct.name, data.uid, data, data.title))
         fetchData()
         break;
       case "atn":
         setLoading(true)
-        console.log(acct, data)
+        //console.log(acct, data)
         await FireEventInteraction.toggleAttendance(FireEventInteraction.data.attendance(acct.uid, acct, acct.name, data.uid, data, data.title))
         fetchData()
         break;
@@ -106,9 +107,9 @@ export function ViewEvent() {
                 <button onClick={setAction.bind(this, "int")} className="p-2 bg-blue-500 text-white rounded-lg mr-2">{inte ? "Interested" : "Not Interested"}</button>
                 <button onClick={setAction.bind(this, "atn")} className="p-2 bg-blue-500 text-white rounded-lg mr-2">{attn ? "Attended" : "Not Attended"}</button>
                 <div className="m-2 border w-fit mx-auto">
-                  <button onClick={setAction.bind(this, "s_1")} className="mr-2">🌟</button>
-                  <button onClick={setAction.bind(this, "s_2")} className="mr-2">🌟</button>
-                  <button onClick={setAction.bind(this, "s_3")} className="mr-2">🌟</button>
+                  <button onClick={setAction.bind(this, "s_1")} className="mr-2">⭐</button>
+                  <button onClick={setAction.bind(this, "s_2")} className="mr-2">⭐</button>
+                  <button onClick={setAction.bind(this, "s_3")} className="mr-2">⭐</button>
                   <button onClick={setAction.bind(this, "s_4")} className="mr-2">⭐</button>
                   <button onClick={setAction.bind(this, "s_5")} className="mr-2">⭐</button>
                 </div>

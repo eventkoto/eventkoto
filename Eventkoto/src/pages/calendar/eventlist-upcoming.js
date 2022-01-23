@@ -8,7 +8,7 @@ const Upcoming = ({events, setData}) => {
             {
                 events.length > 0 ?
                 events.map((e,i) => 
-                    <div onClick={setData.bind(this, e.uid)} key={`up_${i}`}  className="flex bg-white transform h-48 scale-90 rounded-xl overflow-hidden hover:scale-95 border hover:border-red-600 transition-all cursor-pointer">
+                    <div onClick={setData.bind(this, e.uid)} key={`up_${i}`}  className="flex bg-white transform h-48 scale-90 rounded-xl overflow-hidden hover:scale-95 border hover:border-red-600 transition-all cursor-pointer shadow-lg">
                         <div className="flex-1 bg-blue-500 h-full">
                             <img src={e.splash_image} alt="splash" className="w-full h-full object-cover" />
                         </div>

@@ -11,7 +11,7 @@ const Detailbox = ({ id, requestListUpdate = () => {} }) => {
 
   async function fetchData() {
     let data = await FireDBQueryEvents.getOne(id, true, true, true, true);
-    console.log(data);
+    //console.log(data);
     setEData(data);
     setLoading(Boolean(data.uid) && (data.uid === id))
   }

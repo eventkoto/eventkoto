@@ -65,8 +65,7 @@ const Eventlist = () => {
               <Upcoming
                 setData={setHadData}
                 events={eve.filter((e) => {
-                  console.log(e.event_date !== undefined);
-                  return (e.schedules && e.schedules[0]) !== undefined
+                  return e.event_date !== undefined
                     ? new Date(Number(`${e.event_date.seconds}000`)) >
                         Date.now()
                     : true;
@@ -77,7 +76,7 @@ const Eventlist = () => {
                 setData={setHadData}
                 events={eve.filter((e) => {
                   return e.event_date !== undefined
-                    ? new Date(Number(`${e.event_date.seconds}000`)) >
+                    ? new Date(Number(`${e.event_date.seconds}000`)) <
                         Date.now()
                     : true;
                 })}

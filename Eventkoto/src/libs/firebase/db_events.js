@@ -31,7 +31,7 @@ function docAddress(id){
 
 function clearEmpties(o) {
   for (let k in o) {
-    console.log(k, !(o[k].length > 0))
+    //console.log(k, !(o[k].length > 0))
     // Special Case on
     if (k === "published"){
       continue
@@ -39,9 +39,9 @@ function clearEmpties(o) {
     else if (k === "schedules"){
       let final = []
       for(let i in o[k]){
-        console.log(o[k][i])
+        //console.log(o[k][i])
         if (o[k][i] && Boolean(o[k][i].getDate())) {
-          console.log(i)
+          //console.log(i)
           final.push(o[k][i])
         }
       }
@@ -55,7 +55,7 @@ function clearEmpties(o) {
     }
     // The property is an object
     else if (!((o[k].length > 0) || (Object.keys(o[k]).length > 0) || (Boolean(o[k].getDate)))) {
-      console.log(k)
+      //console.log(k)
       delete o[k]; // The object had no properties, so delete that property
     }
   }
@@ -212,7 +212,7 @@ export const FireDBQueryEvents = {
       data.ratings_list = ratingsList
       data.ratings = 0
       if (ratingsList.length > 0){
-        data.ratings = ratingsList.reduce((pV, cV)=> pV += cV.ratings, 0) / ratingsList.length
+        data.ratings = ratingsList.reduce((pV, cV)=> pV += Number(cV.ratings), 0) / ratingsList.length
       }
     }
 
@@ -247,7 +247,7 @@ export const FireDBQueryEvents = {
     return await FireDBRawEvents.readQuery(where("categories", "array-contains", category), where("published", "==", true), limit(amount))
   },
   getLatestByAuthor : async (uid, amount=100) => {
-    console.log(`/Accounts/${uid}`)
+    //console.log(`/Accounts/${uid}`)
     return await FireDBRawEvents.readQuery(where("creator_id", "==", `${uid}`), limit(amount))
   }
 }

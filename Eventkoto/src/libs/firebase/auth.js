@@ -5,6 +5,7 @@ import {
   signOut,
   onAuthStateChanged,
   sendEmailVerification,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import { FireDBAccount } from "./db_account";
 import { FireDBAttendance } from "./db_attendance";
@@ -126,5 +127,20 @@ export const FireAuth = {
   },
   hookAccount: async (callback = log) => {
     onAuthStateChanged(auth, callback);
+  },
+  resetPassword: async (email, resultCB = (e) => log(e)) => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        // Password reset email sent!
+        // ..
+        resultCB(true)
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+        
+        resultCB(false)
+    });
   },
 };

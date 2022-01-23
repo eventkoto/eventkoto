@@ -12,8 +12,14 @@ const RegisterForm = () => {
   const [program, setProgram] = useState("");
   const [org, setOrg] = useState("");
   const [sid, setSid] = useState(""); // Student Id
+  
+  const [logging, setLogging] = useState(false)
+  const [error, setError] = useState(false)
+
 
   function signup() {
+    
+
     let data = FireAuth.data.accountData.viewer(
       name,
       email,
@@ -21,7 +27,31 @@ const RegisterForm = () => {
       org,
       sid,
     )
-    FireAuth.registerUser(email, pass, data);
+
+    if ([name, email, program, org, sid].some((e) => {return(e===undefined || e===false || e.length === 0)}))
+      return setError("Incomplete Sign Up Information")
+
+    if (pass.length === 0)
+      return setError("No Password Provided")
+
+    setLogging(true)
+    setError(false)
+
+    FireAuth.registerUser(email, pass, data, (res) => {
+      //console.log(res.code)
+      //console.log(res.message)
+      
+      setLogging(false)
+      //console.log(res.code)
+      switch(res.code){
+        case 'auth/invalid-email':
+          setError("Invalid Email")
+          break
+        default:
+          setError(res.message)
+          break
+      }
+    });
   }
 
   function signupAuthor() {
@@ -32,14 +62,38 @@ const RegisterForm = () => {
       org,
       sid,
     )
-    FireAuth.registerUser(email, pass, data);
+
+    if ([name, email, program, org, sid].some((e) => {return(e===undefined || e===false || e.length === 0)}))
+      return setError("Incomplete Sign Up Information")
+
+    if (pass.length === 0)
+      return setError("No Password Provided")
+
+    setLogging(true)
+    setError(false)
+
+    FireAuth.registerUser(email, pass, data, (res) => {
+      //console.log(res.code)
+      //console.log(res.message)
+      
+      setLogging(false)
+      //console.log(res.code)
+      switch(res.code){
+        case 'auth/invalid-email':
+          setError("Invalid Email")
+          break
+        default:
+          setError(res.message)
+          break
+      }
+    });
   }
 
-  function _handleKeyDown(e) {
-    if (e.key === 'Enter') {
-      signup()
-    }
-  }
+  //function _handleKeyDown(e) {
+  //  if (e.key === 'Enter') {
+  //    signup()
+  //  }
+  //}
 
   return (
     <>
@@ -92,16 +146,26 @@ const RegisterForm = () => {
           type="password"
           value={pass}
           onChange={(e) => setPass(e.target.value)}
-          onKeyDown={_handleKeyDown}
           required
         />
-        <br />
-        <button className="btnPrimary" onClick={signup}>
-          Sign-up
-        </button>
-        <button className="btnPrimary" onClick={signupAuthor}>
-          Sign-up As An Organization
-        </button>
+        {
+          error && <p className="text-red-600 p-1">{error}</p>
+        }
+        {
+          logging
+          ?
+          <div className="w-3 h-3 bg-red-600 animate-pulse mx-auto m-5"></div>
+          :
+          <>
+            <button className="btnPrimary" onClick={signup}>
+              Sign-up
+            </button>
+            <button className="btnPrimary" onClick={signupAuthor}>
+              Sign-up As An Organization
+            </button>
+          </>
+        }
+        
       </div>
 
       <span id="parag"> Already Have an Account? </span>

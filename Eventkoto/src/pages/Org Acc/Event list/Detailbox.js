@@ -146,6 +146,12 @@ const AdminDetailbox = ({ id, requestListUpdate = () => {} }) => {
                   </button>
                   */}
                   <button onClick={setPA.bind(this, true)} className="bg-red-600 text-white p-3">Delete</button>
+                  
+                  <Link to={`/insights/${eData.uid}`}>
+                    <button onClick={setPB.bind(this, true)} className="bg-green-600 text-white p-3">
+                      Insights
+                    </button>
+                  </Link>
                 </>
               )}
             </div>

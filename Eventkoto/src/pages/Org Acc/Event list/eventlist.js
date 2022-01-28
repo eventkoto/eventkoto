@@ -58,9 +58,11 @@ const Eventlist = () => {
           <div className="flex-1 transition-all">
             
             {switchpages ? 
-            <Upcoming setData={setHadData} events={eve.filter(e => { return ((e.schedules && e.schedules[0]) !== undefined ? (new Date(Number(`${e.schedules[0].seconds}000`)) > Date.now()) : true)})}/> 
+            <Upcoming setData={setHadData} events={
+              eve.filter(e => { return ((e.schedules && e.schedules[1]) !== undefined ? (new Date(Number(`${e.schedules[1].seconds}000`)) > Date.now()) : (e.schedules && e.schedules[0]) !== undefined ? (new Date(Number(`${e.schedules[0].seconds}000`)) > Date.now()) : true)})
+            }/> 
             : 
-            <Finished setData={setHadData} events={eve.filter(e => (e.schedules && e.schedules[0]) !== undefined ? (new Date(Number(`${e.schedules[0].seconds}000`)) < Date.now()) : false)}/>
+            <Finished setData={setHadData} events={eve.filter(e => (e.schedules && e.schedules[1]) !== undefined ? (new Date(Number(`${e.schedules[1].seconds}000`)) < Date.now()) : (e.schedules && e.schedules[0]) !== undefined ? (new Date(Number(`${e.schedules[0].seconds}000`)) < Date.now()) : false)}/>
             }
           </div>
           <div className={`transition-all ${hasData ? "w-1/3" : "w-0"}`}>

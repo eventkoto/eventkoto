@@ -12,6 +12,7 @@ import CreateEvent from "./pages/Org Acc/CreateEvent/createevent";
 import EditEvent from "./pages/Org Acc/Edit Event/editevent";
 import { ViewEvent } from "./pages/Event";
 import ForgotPass from "./pages/Login/ForgotPass";
+import InsightsEvent from "./pages/Org Acc/Edit Event/eventinsight";
 
 function App() {  
 
@@ -44,6 +45,7 @@ function App() {
           <Route path="/admin" element={<Eventlist />} />
           <Route path="/addevent" element={<CreateEvent />} />
           <Route path="/editevent/:id" element={<EditEvent />} />
+          <Route path="/insights/:id" element={<InsightsEvent />} />
           <Route path="*" element={<Navigate to="/"/>} />
 
         </>

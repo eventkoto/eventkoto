@@ -8,6 +8,7 @@ import './styles/sidebar.css';
 import './styles/dashboard_withtiles.css';
 import './styles/calendar.css';
 import './styles/articles.css';
+import './styles/certstyle.css';
 import App from './App';
 
 import { BrowserRouter } from "react-router-dom";

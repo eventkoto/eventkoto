@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVc.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Pinyon Script";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/pinyonscript/v14/6xKpdSJbL9-e9LuoeQiDRQR8WOXaPw.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Rochester";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/rochester/v16/6ae-4KCqVa4Zy6Fif-UC2FHS.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Rosarivo";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/rosarivo/v18/PlI-Fl2lO6N9f8HaNDeF0Hw.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Tangerine";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/tangerine/v15/IurY6Y5j_oScZZow4VOxCZZJ.ttf)
+    format("truetype");
+}
+.cursive {
+  font-family: "Pinyon Script", cursive;
+}
+.cursive-2 {
+  font-family: "Tangerine", cursive;
+  font-size: 38px;
+  font-weight: 400;
+}
+.sans {
+  font-family: "Open Sans", sans-serif;
+}
+.bold {
+  font-weight: bold;
+}
+.medium {
+  font-size: 23px !important;
+}
+.large {
+  font-size: 28px !important;
+}
+.block {
+  display: block;
+}
+.underline {
+  border-bottom: 1px solid #777;
+}
+.pm-empty-space {
+  height: 40px;
+  width: 100%;
+}
+body {
+  background: #ccc;
+}
+.pm-certificate-container {
+  position: relative;
+  color: #333;
+  font-family: "Open Sans", sans-serif;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.pm-certificate-container .pm-certificate-border {
+  position: relative;
+  background-image: none;
+}
+.pm-certificate-container .pm-certificate-border .pm-certificate-block {
+
+  position: relative;
+}
+.pm-certificate-container .pm-certificate-border .pm-certificate-title {
+  position: relative;
+  top: 20px;
+}
+.pm-certificate-container .pm-certificate-border .pm-certificate-title h2 {
+  font-family: "Rosarivo", serif;
+  font-size: 36px !important;
+}
+.pm-certificate-container
+  .pm-certificate-border
+  .pm-certificate-body
+  .pm-certificate-watermark-full {
+  opacity: 0.15;
+  background: 0 0 transparent no-repeat
+    url("http://www.chrisbrosky.com/images/harry-dunne-badge.png");
+  background-size: 500px 500px;
+}
+.pm-certificate-container
+  .pm-certificate-border
+  .pm-certificate-body
+  .pm-certificate-watermark-full.disable {
+  display: none;
+}
+.pm-certificate-container
+  .pm-certificate-border
+  .pm-certificate-body
+  .pm-certificate-text {
+  text-transform: uppercase;
+}
+.pm-certificate-container
+  .pm-certificate-border
+  .pm-certificate-body
+  .pm-name-text {
+  font-size: 20px;
+}
+.pm-certificate-container .pm-certificate-border .pm-earned {
+}
+.pm-certificate-container .pm-certificate-border .pm-earned .pm-earned-text {
+  font-size: 20px;
+}
+.pm-certificate-container .pm-certificate-border .pm-earned .pm-credits-text {
+  font-size: 15px;
+}
+.pm-certificate-container
+  .pm-certificate-border
+  .pm-course-title
+  .pm-earned-text {
+  font-size: 20px;
+}
+.pm-certificate-container
+  .pm-certificate-border
+  .pm-course-title
+  .pm-credits-text {
+  font-size: 15px;
+}
+.pm-certificate-container .pm-certificate-border .pm-certified {
+  font-size: 12px;
+}
+.pm-certificate-container .pm-certificate-border .pm-certificate-footer {
+
+  position: relative;
+}
+.pm-certificate-container
+  .pm-certificate-border
+  .pm-certificate-footer
+  .pm-certificate-badge {
+  position: relative;
+}
